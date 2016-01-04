@@ -1,0 +1,79 @@
+#include "FastLED.h" 
+
+
+#define NUM_LEDS 24
+
+
+#define DATA_PIN 6
+
+
+
+CRGB leds[NUM_LEDS];
+
+int led = 13;
+int bob = 12;
+int zoe = 8;
+int can = 7;
+int fly = 2;
+int she = 1;
+int val = 0;
+int lightSensor = 4;
+
+
+void setup() {
+pinMode(lightSensor,INPUT);
+pinMode(led, OUTPUT);
+pinMode(bob, OUTPUT);
+pinMode(zoe, OUTPUT);
+pinMode (can, OUTPUT);
+pinMode (fly, OUTPUT);
+pinMode(she, OUTPUT);
+  FastLED.addLeds<NEOPIXEL,DATA_PIN>(leds, NUM_LEDS);
+}
+
+void loop() {
+val = analogRead(lightSensor);
+if(val < 50)
+{
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+delay(100);
+digitalWrite(bob, HIGH);
+delay(100);
+digitalWrite(bob, LOW);
+delay(100);
+digitalWrite(zoe, HIGH);
+delay(100);
+digitalWrite(zoe, LOW);
+delay(100);
+digitalWrite(can, HIGH);
+delay(100);
+digitalWrite(can, LOW);
+delay(100);
+digitalWrite (fly,HIGH);
+delay(100);
+digitalWrite(fly, LOW);
+delay(100);
+digitalWrite (she, HIGH);
+delay(100);
+digitalWrite(she, LOW);
+delay(100);
+for(int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CRGB::Yellow;
+    FastLED.show();
+    leds[i] = CRGB::Yellow;
+    delay(30);
+  }
+
+  // Other Direction 
+  for(int i = NUM_LEDS-1; i >= 0; i--) {
+    leds[i] = CRGB::Blue;
+    FastLED.show();
+    leds[i] = CRGB::Blue;
+    delay(30);
+  }
+}
+
+
+}
