@@ -10,13 +10,13 @@
 
 CRGB leds[NUM_LEDS];
 
-int led = 13;
-int bob = 12;
-int zoe = 8;
-int can = 7;
-int fly = 2;
-int she = 1;
-int val = 0;
+int firstLED = 13;
+int secondLED = 12;
+int thirdLED = 8;
+int fourthLED = 7;
+int fifthLED = 2;
+int sixthLED = 1;
+int seventhLED = 0;
 int lightSensor = 4;
 
 
